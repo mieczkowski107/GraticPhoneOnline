@@ -22,8 +22,6 @@
 - **Frontend**: 
 - **Baza danych**: 
 - **Autoryzacja**: 
-- **Płatności**: 
-- **Logowanie**: 
 
 ---
 
