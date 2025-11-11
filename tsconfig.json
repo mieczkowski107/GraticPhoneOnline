@@ -1,10 +1,28 @@
 {
-  "extends": "@tsconfig/node22/tsconfig.json",
   "compilerOptions": {
-    "outDir": "./dist",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "target": "ES2022",
+    "strict": true,
     "rootDir": "./src",
-    "target": "es2022",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "allowUnreachableCode": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "node"
+    ]
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["dist"]
+  "include": [
+    "src/**/*.ts",
+    "src/db/drizzle.config.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
 }
