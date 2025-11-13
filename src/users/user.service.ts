@@ -81,7 +81,7 @@ export const updateUser = async (userId: number, user: any) => {
 export const deleteUser = async (userId: number) => {
     const userToDelete = await db.select().from(usersTable).where(eq(usersTable.id, userId));
     if (userToDelete.length === 0 || userToDelete === undefined) {
-        throw new Error("User not found");
+        throw new NotFoundError("User not found");
     }
     return await db.delete(usersTable).where(eq(usersTable.id, userId));
 }
