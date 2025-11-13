@@ -8,7 +8,7 @@ export const authenticateJwtToken = (req: Request, res: Response, next: NextFunc
         return res.send(StatusCodes.UNAUTHORIZED);
     }
     jwt.verify(token, "AccessToken", (err, user) => {
-        if (err) { return res.send(StatusCodes.FORBIDDEN) }
+        if (err) { return res.sendStatus(StatusCodes.FORBIDDEN) }
         req.body = user;
         next();
     })
