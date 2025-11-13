@@ -75,7 +75,7 @@ export const getSingleUser = async (userId: number) => {
 }
 
 export const updateUser = async (userId: number, user: any) => {
-    return await db.update(usersTable).set(user);
+    return await db.update(usersTable).set(user).where(eq(usersTable.id, userId));
 }
 
 export const deleteUser = async (userId: number) => {
