@@ -1,6 +1,6 @@
 import express, { Request, Response, NextFunction } from 'express';
 import morgan from 'morgan';
-import usersRouter from './users/user.routes.js'
+import usersRouter from './users/user.routes.ts'
 import { errorHandler } from './middlewares/errorHandler.middleware.ts';
 import { SeedRoles } from './db/index.ts';
 
