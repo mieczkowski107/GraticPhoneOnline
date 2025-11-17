@@ -55,7 +55,7 @@ socket.on('chat message', (data) => {
     const { msg, from } = data;
     const item = document.createElement('li');
     item.textContent = msg;
-    if (from == socket.id) {
+    if (from === socket.id) {
         item.style.fontWeight = 'bold';
     }
     messages.appendChild(item);
