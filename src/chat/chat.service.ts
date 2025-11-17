@@ -54,7 +54,7 @@ export const initializeChat = (io: Server) => {
                 socket.to(socket.room).emit('user left', socket.id);
 
                 const roomSockets = io.sockets.adapter.rooms.get(socket.room);
-                if (!roomSockets || roomSockets.size == 0) {
+                if (!roomSockets || roomSockets.size === 0) {
                     activeRooms.delete(socket.room);
                     console.log(`Room ${socket.room} is now empty and has been deleted.`);
                 }
