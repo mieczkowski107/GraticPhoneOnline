@@ -77,6 +77,6 @@ function addSystemMessage(msg) {
     const item = document.createElement('li');
     item.textContent = msg;
     item.style.fontStyle = 'italic';
-    item.style.color = '777';
+    item.style.color = '#777';
     messages.appendChild(item);
 }
