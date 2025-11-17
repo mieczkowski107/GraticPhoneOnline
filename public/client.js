@@ -61,7 +61,7 @@ socket.on('chat message', (data) => {
     messages.appendChild(item);
 });
 
-socket.on('user join', (userId) => {
+socket.on('user joined', (userId) => {
     addSystemMessage('A user has joined the room.');
 });
 
