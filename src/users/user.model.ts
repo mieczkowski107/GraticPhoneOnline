@@ -31,4 +31,5 @@ export type UserLoginData = z.infer<typeof userLoginSchema>;
 export type createdUserDto = {
     username: string,
     email: string,
+    roles: string[]
 }
