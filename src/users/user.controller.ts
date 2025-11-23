@@ -1,7 +1,7 @@
 
 import { NextFunction, Request, Response } from "express";
 import { createUser, getAllUsers, getSingleUser, userLoginProcess, } from "./user.service.ts";
-import { createdUserDto, UserLoginData, UserRegistrationData, userRegistrationSchema } from "./user.model.ts";
+import { UserLoginData, UserRegistrationData } from "./user.model.ts";
 import { StatusCodes } from "http-status-codes";
 
 //Maybe need to move to auth.controller
@@ -25,9 +25,17 @@ export const loginUser = async (req: Request<{}, {}, UserLoginData>, res: Respon
     }
 }
 
+export const token = async (req: Request, res: Response) => {
+
+}
+
+export const logoutUser = async (req: Request, response: Response) => {
+    
+}
+
 export const getUsers = async (_req: Request, res: Response) => {
     const users = await getAllUsers();
-    res.send(users);
+    res.status(StatusCodes.CREATED).json(users);
 }
 
 export const getUserById = async (req: Request, res: Response) => {

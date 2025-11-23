@@ -35,13 +35,28 @@ export const userRolesTable = sqliteTable("user_roles", {
   primaryKey({ columns: [table.userId, table.roleId] }),
 ])
 
+export const refreshTokenTable = sqliteTable("refresh_tokens", {
+  id: int().primaryKey({ autoIncrement: true }),
+  userId: int().notNull().references(() => usersTable.id),
+  tokenHash: text().notNull().unique(),
+  createdAt: text().default(sql`CURRENT_TIMESTAMP`),
+})
+
 export type UserInsert = typeof usersTable.$inferInsert;
 export type UserSelect = typeof usersTable.$inferSelect;
 
 export type RoleInsert = typeof rolesTable.$inferInsert;
 export type RoleSelect = typeof rolesTable.$inferSelect;
 
+export type userRolesInsert = typeof userRolesTable.$inferInsert;
+export type userRolesSelect = typeof userRolesTable.$inferSelect;
+
+export type refreshTokenInsert = typeof refreshTokenTable.$inferInsert;
+export type refreshTokenSelect = typeof refreshTokenTable.$inferSelect;
+
 // #endregion
+
+
 
 
 //#region Games
