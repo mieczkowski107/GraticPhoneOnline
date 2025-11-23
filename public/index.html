@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mockup Socket Chat</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <div id="room-selection">
+        <h1>Hejka</h1>
+        <input id="room-input" autocomplete="off" placeholder="Enter 4-digit room code" maxlength="4" />
+        <br>
+        <button id="join-room-btn">Join Room</button>
+        <button id="create-room-btn">Create New Room</button>
+    </div>
+
+    <div id="chat-container" class="hidden">
+        <div id="room-display"></div>
+        <ul id="messages"></ul>
+        <form id="form" action="">
+            <input id="input" autocomplete="off" />
+            <button>Send</button>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+</body>
+
+</html>
